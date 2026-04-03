@@ -3,14 +3,10 @@ import { User } from '../types/User';
 
 type InitialState = {
   user: User | null;
-  loading: boolean;
-  error: string;
 };
 
 const initialState: InitialState = {
   user: null,
-  loading: false,
-  error: '',
 };
 
 const userSlice = createSlice({

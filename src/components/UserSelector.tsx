@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { init } from '../reducers/users';
-import { select } from '../reducers/user';
-import { clear } from '../reducers/post';
+import { init } from '../features/users';
+import { select } from '../features/user';
+import { clear } from '../features/post';
 
 export const UserSelector: React.FC = () => {
   const data = useAppSelector(state => state.users);

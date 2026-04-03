@@ -7,7 +7,7 @@ import * as commentsApi from '../api/comments';
 import { Post } from '../types/Post';
 import { CommentData } from '../types/Comment';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { add, init, remove } from '../reducers/comments';
+import { add, init, remove } from '../features/comments';
 
 type Props = {
   post: Post;

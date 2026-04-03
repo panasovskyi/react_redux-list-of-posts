@@ -10,7 +10,7 @@ import { PostDetails } from './components/PostDetails';
 import { UserSelector } from './components/UserSelector';
 import { Loader } from './components/Loader';
 import { useAppDispatch, useAppSelector } from './app/hooks';
-import { init } from './reducers/posts';
+import { init } from './features/posts';
 
 export const App: React.FC = () => {
   const { user } = useAppSelector(state => state.user);
