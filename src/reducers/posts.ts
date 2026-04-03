@@ -3,15 +3,15 @@ import { Post } from '../types/Post';
 import { getUserPosts } from '../api/posts';
 
 type InitialState = {
-  loading: boolean;
-  error: string;
-  posts: Post[];
+  loaded: boolean;
+  hasError: string;
+  items: Post[];
 };
 
 const initialState: InitialState = {
-  loading: false,
-  error: '',
-  posts: [],
+  loaded: true,
+  hasError: '',
+  items: [],
 };
 
 export const init = createAsyncThunk('posts/fetch', (id: number) => {
@@ -24,15 +24,15 @@ const postsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(init.pending, state => {
-      state.loading = true;
+      state.loaded = false;
     });
     builder.addCase(init.rejected, state => {
-      state.error = 'Error';
-      state.loading = false;
+      state.hasError = 'Error';
+      state.loaded = true;
     });
     builder.addCase(init.fulfilled, (state, action) => {
-      state.loading = false;
-      state.posts = action.payload;
+      state.loaded = true;
+      state.items = action.payload;
     });
   },
 });
